@@ -100,25 +100,66 @@ img {
 /* Contenido principal */
 
 main {
-    min-height: 65vh;
+    min-height: auto;
     padding-block: 2rem 4rem;
+    flex: 1;
 }
 
 /* Pie de página */
 
-.pie {
+footer {
     background-color: var(--color-papel);
     border-top: 1px solid var(--color-borde);
-    padding-block: 2rem;
+    padding-block: 1rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
-.pie p {
-    margin-bottom: 0.5rem;
+footer .fila {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.75rem;
 }
 
-.pie .nota {
+footer .marca {
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-texto);
+    font-size: 1.25rem;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+footer .marca:hover,
+footer .marca:focus-visible {
+    color: var(--color-acento);
+}
+
+footer span {
     color: var(--color-suave);
-    font-size: 0.9rem;
+}
+
+footer .nota {
+    color: var(--color-suave);
+    font-size: 0.6rem;
+}
+
+footer a[href^="https://"] {
+    display: inline-block;
+    color: var(--color-acento);
+    font-size: 0.6rem;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+footer a[href^="https://"]:hover,
+footer a[href^="https://"]:focus-visible {
+    color: var(--color-texto);
 }
 
 /* Adaptación a pantallas estrechas */
@@ -137,5 +178,14 @@ main {
     .navegacion a {
         flex-grow: 1;
         text-align: center;
+    }
+
+    footer .fila {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    footer .nota {
+        max-width: 100%;
     }
 }
