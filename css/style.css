@@ -1,0 +1,141 @@
+/* Variables de color y medidas*/
+:root {
+    --color-papel: #f6f5ef;
+    --color-fondo: #ffffff;
+    --color-texto: #203b31;
+    --color-suave: #52685e;
+    --color-acento: #176244;
+    --color-borde: #cbd6ce;
+
+    --radio: 12px;
+    --espacio: 1rem;
+    --ancho-maximo: 1150px;
+}
+
+/* Base del documento */
+body {
+    min-height: 100vh;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: Arial;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+a {
+    color: var(--color-acento);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* Cabecera */
+.cabecera{
+    width: 100%;
+    background-color: var(--color-papel);
+    border-bottom: 1px solid var(--color-borde);
+}
+
+.cabecera-interior {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-block: 1rem;
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--color-texto);
+    font-size: 1.25rem;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.marca img {
+    height: 36px;
+}
+
+/* Contenedor General */
+.contenedor {
+    max-width: var(--ancho-maximo);
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+}
+
+.navegacion {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-left: auto;
+}
+
+.navegacion a {
+    color: var(--color-texto);
+    padding: 0.55rem 0.65rem;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.navegacion a:hover,
+.navegacion a:focus-visible {
+    background-color: var(--color-borde);
+    color: var(--color-acento);
+}
+
+.navegacion a[aria-current="page"] {
+    background-color: var(--color-borde);
+    color: var(--color-acento);
+    font-weight: 700;
+    border: 1px solid var(--color-suave);
+}
+
+/* Contenido principal */
+
+main {
+    min-height: 65vh;
+    padding-block: 2rem 4rem;
+}
+
+/* Pie de página */
+
+.pie {
+    background-color: var(--color-papel);
+    border-top: 1px solid var(--color-borde);
+    padding-block: 2rem;
+}
+
+.pie p {
+    margin-bottom: 0.5rem;
+}
+
+.pie .nota {
+    color: var(--color-suave);
+    font-size: 0.9rem;
+}
+
+/* Adaptación a pantallas estrechas */
+
+@media (max-width: 760px) {
+    .cabecera-interior {
+        gap: 0.5rem;
+    }
+
+    .navegacion {
+        order: 3;
+        width: 100%;
+        margin: 0;
+    }
+
+    .navegacion a {
+        flex-grow: 1;
+        text-align: center;
+    }
+}
